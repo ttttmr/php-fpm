@@ -2,13 +2,13 @@
 
 来自[@Medicean](https://github.com/Medicean) 大佬的文末一个想法 https://mp.weixin.qq.com/s/T_k_TVv6h7W8paZyHym-sw
 
-快速实现了一个poc，可以实现命令执行
+快速实现了一个poc，可以实现任意代码执行
 
-后续用单文件PHP实现一个Fastcgi Client，然后已知PHP文件就用WebShell自身，WebShell命令执行美滋滋
+后续用单文件PHP实现一个Fastcgi Client，然后已知PHP文件就用WebShell自身，没有什么骚操作的话WebShell应该就是免杀的
 
 ## 使用
 
-测试 php7.3-fpm
+测试 php7.3-fpm，在TCP模式和本地socket都可以运行
 
 ```
 echo "<?php echo 1; ?>" > /tmp/poc.php
